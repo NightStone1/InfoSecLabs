@@ -15,33 +15,5 @@ public static class ByteUtils
             result[i] = (byte)(left[i] ^ right[i]);
 
         return result;
-    }
-
-    public static byte[] Concat(params byte[][] arrays)
-    {
-        if (arrays is null) throw new ArgumentNullException(nameof(arrays));
-
-        int totalLength = arrays.Sum(a => a?.Length ?? 0);
-        byte[] result = new byte[totalLength];
-
-        int offset = 0;
-        foreach (byte[]? arr in arrays)
-        {
-            if (arr is null) continue;
-            Buffer.BlockCopy(arr, 0, result, offset, arr.Length);
-            offset += arr.Length;
-        }
-
-        return result;
-    }
-
-    public static byte[] FlipByte(byte[] data, int index)
-    {
-        if (data is null) throw new ArgumentNullException(nameof(data));
-        if (index < 0 || index >= data.Length) throw new ArgumentOutOfRangeException(nameof(index));
-
-        byte[] copy = (byte[])data.Clone();
-        copy[index] ^= 0x01;
-        return copy;
-    }
+    }    
 }

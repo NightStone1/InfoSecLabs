@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using InfoSec.Common.Output;
 using InfoSec.Common.Utils;
 using InfoSec.Common.Variant;
 
